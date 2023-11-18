@@ -1,0 +1,28 @@
+<div class="bootstrap-wrapper margin-top">
+    <div class="container-fluid">
+        <mat-card>
+            <div mat-subheader>
+                <h1>Add Category</h1>
+            </div>
+            <form (ngSubmit)="addCategory()" #f="ngForm">
+                <mat-form-field class="width-100" appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input type="text" matInput placeholder="Enter Here.." name="title" required
+                        [(ngModel)]="category.title">
+                    <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="width-100" appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea type="text" matInput placeholder="Enter Here.." name="desc" required
+                        [(ngModel)]="category.description" email>
+                        </textarea>
+                    <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Add</button>
+                    <button type="reset" style="margin-left:20px ;" mat-raised-button color="accent">Clear</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

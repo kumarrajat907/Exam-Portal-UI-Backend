@@ -1,0 +1,45 @@
+<div class="bootstrap-wrapper mt10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read the instructions carefully  
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="ml15">
+                        <h1>{{quiz.title}}</h1>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h1>Important Instructions</h1>
+                        <ul>
+                            <li>
+                                This quiz is only for practice purpose.
+                            </li>
+                            <li>Maximum time for the quiz is {{quiz.noOfQuestion*2}} Minutes</li>
+                            <li>You can attempt quiz many number of times</li>
+                            <li>There are {{quiz.noOfQuestion}} Questions in this Quiz</li>
+                            <li>Each question carry {{quiz.maximumMarks/quiz.noOfQuestion}} Marks.</li>
+                        </ul>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <h1>For Attempting Quiz</h1>
+                        <ul>
+                            <li>
+                                Once quiz is started you can't Stop the timer.
+                            </li>
+                            <li>Ensure Proper internet connection.</li>
+                            <li>After submitting the quiz , test gets over.</li>
+                            <li>Result will automatically generated after submission of quiz.</li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button (click)="start(quiz.qId)" mat-raised-button color="primary">Start Quiz</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper mt10">
+    <div class="container-fluid">
+        <mat-list>
+            <div mat-subheader>
+                <h1>{{title}} Questions</h1>
+            </div>
+        </mat-list>
+        <div class="container text-center">
+            <button [routerLink]="['/admin/add-question']" [queryParams]="{qId:id,title:title}" mat-raised-button color="primary"
+                title="Add Question">Add Question
+            </button>
+
+        </div>
+        <mat-card *ngFor="let q of questions ;let i=index" class="mt10">
+            <mat-card-content>
+                <b>Q{{i+1}}</b> <span> {{q.content}}</span>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p> <b>1)</b> {{q.option1}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p> <b>2)</b> {{q.option2}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p> <b>3)</b> {{q.option3}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p> <b>4)</b> {{q.option4}}</p>
+                        </div>
+                    </div>
+                    <mat-divider>
+
+                    </mat-divider>
+                    <b class="mt10">Correct Answer: </b> {{q.answer}}
+                    <button (click)="updateQuestion(q.quesId)" title="Update" mat-mini-fab color="primary" style="margin-left: 90%;
+                    margin-top: 10px;position: relative;"><mat-icon>update</mat-icon></button>
+                    <button title="Delete" mat-mini-fab color="warn" style="margin-left: 1%;
+                    margin-top: 10px; position:relative;" (click)="deleteQuestion(q.quesId)"><mat-icon>delete</mat-icon></button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.example-header-image {
+    background-image: url('../../../../assets/writing.png');
+    background-size: cover;
+}
+
+.border-green {
+    border: 1.5px solid rgb(91, 221, 91);
+}
+
+.border-red {
+    border: 2px solid rgb(240, 138, 138);
+}
+
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

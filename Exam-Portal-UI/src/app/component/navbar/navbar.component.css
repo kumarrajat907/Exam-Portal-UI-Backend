@@ -1,0 +1,15 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mr{
+  margin-right: 50px;
+}
+
+.ml{
+  margin-left: 50px;
+}
+
+.c-pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,104 @@
+<div class="bootstrap-wrapper" style="height:100% ;">
+    <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]=5000 color="accent" maxWidth="auto"
+        [proportion]=40 [loop]="true" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true"
+        [useMouseWheel]="false" orientation="ltr" slideHeight="100%" [maintainAspectRatio]="false">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
+            overlayColor="#00000040" [hideOverlay]="false">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <mat-card class="card-color">
+                            <div class="container text-center">
+                                <img src="https://uxwing.com/wp-content/themes/uxwing/download/editing-user-action/signup-icon.png"
+                                    alt="" style="width: 100px">
+                            </div>
+                            <h1 class="text-center">Register Here !!</h1>
+                            <form (ngSubmit)="formSubmit()" #f="ngForm">
+                                <mat-form-field class="width-100" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Enter Here.." [(ngModel)]="user.email"
+                                        name="email" required email>
+                                    <mat-hint>Hint</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field class="width-100" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input type="password" matInput placeholder="Enter Here.."
+                                        [(ngModel)]="user.password" name="password" required>
+                                    <mat-hint>Hint</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field class="width-100" appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input type="text" matInput placeholder="Enter Here.." [(ngModel)]="user.firstName"
+                                        name="firstName" required>
+                                    <mat-hint>Hint</mat-hint>
+                                </mat-form-field>
+                                <mat-form-field class="width-100" appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input type="text" matInput placeholder="Enter Here.." [(ngModel)]="user.lastName"
+                                        name="lastName" required>
+                                    <mat-hint>Hint</mat-hint>
+                                </mat-form-field>
+                                <div class="container text-center">
+                                    <button type="submit" mat-raised-button color="primary" [disabled]="!f.valid">Sign
+                                        Up</button>
+                                    <button type="reset" style="margin-left:20px ;" mat-raised-button
+                                        color="accent">Clear</button>
+                                </div>
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+
+        </mat-carousel-slide>
+    </mat-carousel>
+
+</div>
+<!-- <div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card class="card-color">
+                    <div class="container text-center">
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/editing-user-action/signup-icon.png"
+                            alt="" style="width: 100px">
+                    </div>
+                    <h1 class="text-center">Register Here !!</h1>
+                    <form (ngSubmit)="formSubmit()" #f="ngForm">
+                        <mat-form-field class="width-100" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Enter Here.." [(ngModel)]="user.email"
+                                name="email" required>
+                            <mat-hint>Hint</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field class="width-100" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="Enter Here.." [(ngModel)]="user.password"
+                                name="password" required>
+                            <mat-hint>Hint</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field class="width-100" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input type="text" matInput placeholder="Enter Here.." [(ngModel)]="user.firstName"
+                                name="firstName" required>
+                            <mat-hint>Hint</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field class="width-100" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input type="text" matInput placeholder="Enter Here.." [(ngModel)]="user.lastName"
+                                name="lastName" required>
+                            <mat-hint>Hint</mat-hint>
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" [disabled]="!f.valid">Sign
+                                Up</button>
+                            <button type="reset" style="margin-left:20px ;" mat-raised-button
+                                color="accent">Clear</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div> -->

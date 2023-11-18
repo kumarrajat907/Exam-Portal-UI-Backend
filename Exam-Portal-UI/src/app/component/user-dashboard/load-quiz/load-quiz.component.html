@@ -1,0 +1,63 @@
+<mat-card *ngFor="let q of quizzes" ngClass="{{q.active?'mt10 border-green':'mt10 border-red'}}">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+            {{q.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            Category: {{q.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="truncate">{{q.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <!-- <button [routerLink]="['/admin/question']" [queryParams]="{id:q.qId,title:q.title}" mat-button color="accent"
+            class="ml10">View</button> -->
+        <button [routerLink]="['/user-dashboard/instruction']" [queryParams]="{id:q.qId}" mat-button color="primary"
+            class="ml10">Start</button>
+        <button mat-stroked-button color="warn" class="ml10">Max Marks: {{q.maximumMarks}}</button>
+        <button mat-stroked-button color="warn" class="ml10">No of Question:
+            {{q.noOfQuestion}}
+        </button>
+    </mat-card-actions>
+</mat-card>
+<!-- <div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let q of quizzes">
+            <mat-card  ngClass="{{q.active?'mt10 border-green':'mt10 border-red'}}">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>
+                        {{q.title}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Category: {{q.category.title}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="truncate">{{q.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button [routerLink]="['/admin/question']" [queryParams]="{id:q.qId,title:q.title}" mat-raised-button
+                        color="warn" class="ml10">Questions:</button>
+                    <button mat-stroked-button color="warn" class="ml10">Max Marks: {{q.maximumMarks}}</button>
+                    <button mat-stroked-button color="warn" class="ml10">No of Question:
+                        {{q.noOfQuestion}}
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div> -->
+<ng-container *ngIf="quizzes.length==0">
+    <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <img [src]="['assets/error.png']" alt="" style="width:50% ;height:50%;margin-left: 19%;
+                margin-top: 10%;">
+            </div>
+        </div>
+    </div>
+
+</ng-container>

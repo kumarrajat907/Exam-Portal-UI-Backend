@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" style="background: #212121">
+  <a mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="" title="Home">
+    <mat-icon>home</mat-icon>
+  </a>
+  <span routerLink="" class="c-pointer">Exam | Portal</span>
+  <span class="example-spacer"></span>
+  <div class="bootstrap-wrapper">
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <span *ngIf="isLoggedIn && userName">{{userName}}</span>
+        <a *ngIf="!(isLogin$|async)" mat-icon-button class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon" [title]="'Login'" [routerLink]="['login']">
+          <mat-icon>login</mat-icon>Login
+        </a>
+        <button *ngIf="(isLogin$|async)" mat-icon-button class="example-icon favorite-icon mr ml"
+          aria-label="Example icon-button with heart icon" [title]="'Logout'" (click)="doLogout()">
+          <mat-icon>logout</mat-icon>Logout
+        </button>
+        <a *ngIf="!(isLogin$|async)" mat-icon-button class="example-icon mr ml"
+          aria-label="Example icon-button with share icon" title="Register" routerLink="signup">
+          <mat-icon>how_to_reg</mat-icon>Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
